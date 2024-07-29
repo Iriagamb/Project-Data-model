@@ -2,9 +2,6 @@
 # StarWars blog database
 <!--endhide-->
 
-**Important**: To do this activity, you need to `fork` [this repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) into your **Github** account and then open the forked repo on Codespaces (recommended) or Gitpod.
-
-Inside the `src/models.py` file you will find a couple of classes describing an example database.
 
 Here is a 10 min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
 

@@ -7,23 +7,37 @@ from eralchemy2 import render_er
 
 Base = declarative_base()
 
-class Person(Base):
-    __tablename__ = 'person'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
-    id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
+class Register(base):
+    __tablename__: 'register'
+    id = Column(Integer,primary_key=True)
+    email = Column(String (50), unique=True, nullable=False)
+    name_user = Column(String(50))
+    lastname_user = Column(String(50))
+    password = Column(varchar (50))
 
-class Address(Base):
-    __tablename__ = 'address'
-    # Here we define columns for the table address.
-    # Notice that each column is also a normal Python instance attribute.
-    id = Column(Integer, primary_key=True)
-    street_name = Column(String(250))
-    street_number = Column(String(250))
-    post_code = Column(String(250), nullable=False)
-    person_id = Column(Integer, ForeignKey('person.id'))
-    person = relationship(Person)
+class Login(base):
+    __tablename__:'login'
+    id = Column(Integer,primary_key=True)
+    email = Column(String (50), unique=True,nullable=False)
+    password = Column(varchar (50))
+
+class Neighbor_Directory(base):
+    __tablename__:'neighbor_directory'
+    id = Column(Integer,primary_key=True)
+    user_others = Column(Integer(50))
+    detail = Column(Integer(50))
+
+class Personal(base):
+    __tablename__:'personal'
+    id = Column(integer,primary_key=True)
+    name_user = Column(string(50))
+    last_name = Column(String(50))
+    dept = Column(String(50))
+    localshop = Column(string(50))
+
+class Products(base):
+    __tablename__:'products'
+    id = Column(Integer,primary_key)
 
     def to_dict(self):
         return {}
